@@ -2,8 +2,12 @@
   <h1>報名參加</h1>
 
   <h2>參賽資格</h2>
+  <p><%= Faker::Lorem.paragraph %></p>
 
   <h2>報名流程</h2>
+  <p><%= Faker::Lorem.paragraph(2, false, 4) %></p>
 
-  <h2>報名</h2>
+  <% unless current_user %>
+    <%= link_to("前往報名", new_user_registration_path, :class => "btn btn-info btn-lg") %>
+  <% end %>
 </div>

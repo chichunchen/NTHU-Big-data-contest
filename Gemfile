@@ -41,12 +41,13 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'faker', '~> 1.4.3'
 end
 
 gem 'rails_admin', '~> 0.6.8'
 gem 'devise', '~> 3.5.1'
 gem 'cancancan', '~> 1.11.0'
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0'

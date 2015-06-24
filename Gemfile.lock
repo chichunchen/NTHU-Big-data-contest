@@ -73,6 +73,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     globalid (0.3.5)
@@ -198,13 +200,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
+  better_errors (~> 2.1.1)
+  binding_of_caller (~> 0.7.2)
   bootstrap-sass (~> 3.3.5)
   byebug
   cancancan (~> 1.11.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.1)
+  faker (~> 1.4.3)
   jbuilder (~> 2.0)
   jquery-rails
   pg
@@ -212,7 +215,7 @@ DEPENDENCIES
   rails_admin (~> 0.6.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  simple_form
+  simple_form (~> 3.1.0)
   spring
   turbolinks
   uglifier (>= 1.3.0)
