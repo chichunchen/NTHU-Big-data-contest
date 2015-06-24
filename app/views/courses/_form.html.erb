@@ -1,0 +1,15 @@
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :code %>
+    <%= f.input :title %>
+    <%= f.input :hosts %>
+    <%= f.input :schooltime %>
+    <%= f.input :total_hour %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
