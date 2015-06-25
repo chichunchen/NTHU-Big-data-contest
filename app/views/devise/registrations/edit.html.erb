@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>修改帳號<%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -13,6 +13,18 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :name, label: "真實姓名", required: true %>
+    <%= f.input :nation, label: "國籍", collection: ["中華民國（台灣）籍", "外國籍"], required: true, prompt: "請選擇國籍" %>
+    <%= f.input :identity, label: "身分證字號", required: true %>
+    <%= f.input :birthday, as: :date, start_year: Date.today.year - 60,
+                              end_year: Date.today.year - 12,
+                              order: [:year, :month, :day] %>
+    <%= f.input :gender, label: "性別", collection: [:male, :female], prompt: "請選擇", required: true %>
+    <%= f.input :experience, label: "相關經歷", as: :text, hint: "描述您曾參與過相關競賽與成果" %>
+    <%= f.input :course, label: "相關課程", as: :text, hint: "您曾經參與過的課程" %>
+    <%= f.input :phone, label: "聯絡電話（市話）", required: true, as: :tel %>
+    <%= f.input :cell_phone, label: "聯絡電話（手機）", required: true %>
+    <%= f.input :address, label: "地址", required: true %>
   </div>
 
   <div class="form-actions">

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :nation, presence: :true
   validates :identity, length: { is: 10 }
   validates :birthday, presence: :true
-  validates :gender, presence: :true
+  validates :gender, inclusion: { in: %w[male female] }
   validates :phone, presence: :true
   validates :cell_phone, presence: :true
   validates :address, presence: :true
