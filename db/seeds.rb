@@ -8,5 +8,5 @@
 
 Role.create([name: 'admin'])
 
-u = User.create([email: 'admin@gmail.com', password: 'password'])
-u.roles << Role.first
+# u = User.create([email: 'admin@gmail.com', password: 'password', password_confirmation: 'password'])
+# u.roles << Role.find(name: 'admin')
