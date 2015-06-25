@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :groups do
+    member do
+      post :join
+      post :quit
+    end
+
     resources :users
   end
 

@@ -19,4 +19,18 @@ class User < ActiveRecord::Base
   def has_role?(name)
     self.roles.where(name: name).length > 0
   end
+
+  def is_member_of?(g)
+    self.group == g
+  end
+
+  def join! group
+    self.group = group
+    self.save
+  end
+
+  def quit!
+    self.group = nil
+    self.save
+  end
 end
