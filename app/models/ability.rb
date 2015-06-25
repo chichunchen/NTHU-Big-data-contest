@@ -9,7 +9,8 @@ class Ability
       can :dashboard
       can :manage, :all
     else
-      can :read, [Course]
+      can :read, [Course, Group]
+      can :manage, Group
     end
     # Define abilities for the passed in user here. For example:
     #

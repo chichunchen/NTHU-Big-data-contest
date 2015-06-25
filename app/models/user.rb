@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
     self.roles.where(name: name).length > 0
   end
 
-  def is_member_of?(g)
-    self.group == g
+  def is_member_of?(group)
+    self.group == group
   end
 
   def join! group

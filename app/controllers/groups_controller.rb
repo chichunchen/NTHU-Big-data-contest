@@ -17,7 +17,8 @@ class GroupsController < ApplicationController
     @group = Group.create(group_params)
 
     if @group.save
-      redirect_to groups_path
+      current_user.join! @group
+      redirect_to groups_path, notice: "隊伍新增成功"
     else
       render :new
     end

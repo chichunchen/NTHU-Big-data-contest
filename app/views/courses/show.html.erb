@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<%= link_to '←回到課程', courses_path, :class => "btn btn-default" %>
+<br><br>
 
 <p>
   <strong>Code:</strong>
@@ -24,6 +25,3 @@
   <strong>Total hour:</strong>
   <%= @course.total_hour %>
 </p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
