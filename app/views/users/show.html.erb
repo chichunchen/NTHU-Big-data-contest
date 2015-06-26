@@ -1,11 +1,16 @@
-<h1>Users#show</h1>
+<h1>
+  <%= @user.name %><br />
+</h1>
 
 <p>
-  名字:<%= @user.name %><br />
-  單位: (學校+科系+等級別+日夜別+年級)<br />
-  相關專長:<%= @user.experience %><br >
-  相關經歷:<%= @user.experience %><br >
-  相關課程:<%= @user.course %><br >
+  單位: <br />
+  (學校+科系+等級別+日夜別+年級)<br /><br />
+  相關專長:<br />
+  <%= @user.experience %><br ><br />
+  相關經歷:<br />
+  <%= @user.experience %><br ><br />
+  相關課程:<br />
+  <%= @user.course %><br ><br />
   參與BDC課程: <br >
   狀態: temp <br />
 </p>
