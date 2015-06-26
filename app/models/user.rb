@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     self.group == group
   end
 
+  def has_join_group?
+    self.group != nil
+  end
+
   def join! group
     self.group = group
     self.save
