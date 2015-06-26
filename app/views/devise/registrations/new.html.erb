@@ -22,6 +22,9 @@
     <%= f.input :phone, label: "聯絡電話（市話）", required: true, as: :tel %>
     <%= f.input :cell_phone, label: "聯絡電話（手機）", required: true %>
     <%= f.input :address, label: "地址", required: true %>
+    <%= f.input :has_job_bank, label: "是否擁有1111人力銀行帳號嗎?", as: :radio_buttons %>
+    <%= f.input :agree_job_bank, label: "是否同意同步建立1111人力銀行帳號", as: :radio_buttons %>
+    <%= f.input :password_job_bank, label: "1111人力銀行帳號密碼" %>
   </div>
 
   <hr />
