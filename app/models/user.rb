@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :address, presence: :true
 
   has_and_belongs_to_many :roles
+  has_and_belongs_to_many :skills
   belongs_to :group
 
   after_create :send_inform_mail

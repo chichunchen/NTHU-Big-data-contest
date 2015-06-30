@@ -7,7 +7,11 @@
   單位: <br />
   (學校+科系+等級別+日夜別+年級)<br /><br />
   相關專長:<br />
-  <%= @user.experience %><br ><br />
+  <%= 
+      @user.skills.each do |skill|
+        skill
+      end
+  %><br ><br />
   相關經歷:<br />
   <%= @user.experience %><br ><br />
   相關課程:<br />
