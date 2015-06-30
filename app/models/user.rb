@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   belongs_to :group
 
+  after_create :send_inform_mail
+  def send_inform_mail
+    UserMailer.inform_mail(self).deliver_later
+  end
+
   def has_role?(name)
     self.roles.where(name: name).length > 0
   end
