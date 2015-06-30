@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :image, ImageUploader
+
   validates :name, presence: :true
   validates :nation, presence: :true
   validates :identity, length: { is: 10 }
