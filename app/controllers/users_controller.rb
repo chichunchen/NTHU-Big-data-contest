@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def meet
     @user = User.find(params[:id])
-    UserMailer.meet_email(@user).deliver_later
+    UserMailer.meet_email(current_user, @user).deliver_later
     redirect_to user_path(@user), notice: "已成功寄送邀請信件"
   end
 end
