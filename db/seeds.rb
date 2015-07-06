@@ -1,15 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Role.create([name: 'admin'])
 
 Ustatus.create([name: '缺切結書'])
 Ustatus.create([name: '完成報名但未組隊'])
+Ustatus.create([name: '完成報名與組隊'])
 Ustatus.create([name: '晉級複賽'])
 
 # 最高權限帳號
@@ -29,7 +22,8 @@ admin = User.create!(
   address: Faker::Address.city,
   has_job_bank: false,
   agree_job_bank: [true, false].sample,
-  password_job_bank: Faker::Internet.password
+  password_job_bank: Faker::Internet.password,
+  ustatus: Ustatus.last
 )
 admin.roles << Role.find_by(name: 'admin')
 
@@ -51,7 +45,7 @@ create_user = for i in 1..8 do
     has_job_bank: [true, false].sample,
     agree_job_bank: [true, false].sample,
     password_job_bank: Faker::Internet.password,
-    ustatus: Ustatus.find(1)
+    ustatus: Ustatus.sample
   )
 end
 

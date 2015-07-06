@@ -20,7 +20,10 @@ class User < ActiveRecord::Base
   belongs_to :group
   belongs_to :ustatus
 
+  scope :need_group, -> { where(ustatus: Ustatus.find_by(name: "完成報名但未組隊")) }
+
   after_create :send_inform_mail
+  after_create :set_default
   def send_inform_mail
     UserMailer.inform_mail(self).deliver_later
   end
@@ -49,5 +52,6 @@ class User < ActiveRecord::Base
 
   def set_default
     self.ustatus = Ustatus.find_by(name: "缺切結書")
+    self.save
   end
 end
