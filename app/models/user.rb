@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
     self.group = nil
     self.save
   end
+
+  def set_default
+    self.ustatus = Ustatus.find_by(name: "缺切結書")
+  end
 end
