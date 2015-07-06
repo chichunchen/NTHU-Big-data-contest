@@ -8,6 +8,10 @@
 
 Role.create([name: 'admin'])
 
+Ustatus.create([name: '缺切結書'])
+Ustatus.create([name: '完成報名但未組隊'])
+Ustatus.create([name: '晉級複賽'])
+
 # 最高權限帳號
 admin = User.create!(
   name: "管理員",
@@ -29,7 +33,7 @@ admin = User.create!(
 )
 admin.roles << Role.find_by(name: 'admin')
 
-create_user = for i in 1..20 do
+create_user = for i in 1..8 do
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
