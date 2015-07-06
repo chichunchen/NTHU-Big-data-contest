@@ -53,3 +53,4 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form', '~> 3.1.0'
 gem 'carrierwave', '~> 0.10.0'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem "select2-rails"
