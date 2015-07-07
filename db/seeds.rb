@@ -5,6 +5,11 @@ Ustatus.create([name: '完成報名但未組隊'])
 Ustatus.create([name: '完成報名與組隊'])
 Ustatus.create([name: '晉級複賽'])
 
+Gstatus.create([name: '預設狀態'])
+Gstatus.create([name: '通過初賽資格審核'])
+Gstatus.create([name: '通過復賽資格審核'])
+Gstatus.create([name: '晉級決賽'])
+
 # 最高權限帳號
 admin = User.create!(
   name: "管理員",

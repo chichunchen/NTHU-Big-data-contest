@@ -1,4 +1,9 @@
-<p><%= @user.name %>您好!</p>
+<p><%= @user.name %>
+<% if @user.gender == 'male' %>
+  先生
+<% else %>
+  小姐
+<% end %>您好!</p>
 
 <p>您目前已完成競賽線上報名資料填寫。</p>
 
@@ -11,7 +16,7 @@
 電子信箱：<%= @user.email %><br />
 國籍：<%= @user.nation %><br />
 身分證字號：<%= @user.identity %><br />
-出生日期：<%= @user.birthday %>
+出生日期：<%= @user.birthday %><br />
 性別：<%= @user.gender %><br />
 技能：<%= @user.skills.inspect %><br />
 經歷：<%= @user.experience %><br />
