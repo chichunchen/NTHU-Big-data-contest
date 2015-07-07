@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706155512) do
+ActiveRecord::Schema.define(version: 20150707111410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,17 @@ ActiveRecord::Schema.define(version: 20150706155512) do
     t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "status"
     t.string   "status_note"
+    t.integer  "gstatus_id"
+  end
+
+  add_index "groups", ["gstatus_id"], name: "index_groups_on_gstatus_id", using: :btree
+
+  create_table "gstatuses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
@@ -99,5 +108,6 @@ ActiveRecord::Schema.define(version: 20150706155512) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "groups", "gstatuses"
   add_foreign_key "users", "ustatuses"
 end
