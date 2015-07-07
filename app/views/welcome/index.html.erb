@@ -2,6 +2,9 @@
   <p>
     在大數據時代，面對物聯網、智慧工廠及工業4.0相關技術驅動的產業結構重整，本競賽垂直整合相關領域提供半導體大數據實戰擂台及相關培訓課程，
     以培養更多符合未來產業需求的大數據人才，歡迎學生組成跨領域團隊前來挑戰並參加培訓，符合資格者將發給參賽或晉級等相關證明。
+    <% if current_user && current_user.ustatus = Ustatus.find_by(name: "缺切結書") %>
+      <a href=<%= root_url + "/BDC2015切結書.pdf" %> download type="button" class="btn btn-info">切結書下載</a>
+    <% end %>
   </p>
 
   <h2>獎勵方法</h2>

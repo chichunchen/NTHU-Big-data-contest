@@ -45,7 +45,7 @@ create_user = for i in 1..8 do
     has_job_bank: [true, false].sample,
     agree_job_bank: [true, false].sample,
     password_job_bank: Faker::Internet.password,
-    ustatus: Ustatus.sample
+    ustatus: Ustatus.all.sample
   )
 end
 
