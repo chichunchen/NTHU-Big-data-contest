@@ -20,7 +20,9 @@
 
       <ul class="nav navbar-nav">
         <li><a href="/users">組隊媒合</a></li>
-        <li><a href="/groups">隊伍</a></li>
+        <% if current_user && current_user.group %>
+          <li><%= link_to "隊伍資訊", group_path(current_user.group) %></li>
+        <% end %>
         <li><a href="/courses">課程</a></li>
       </ul>
 
