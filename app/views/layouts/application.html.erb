@@ -14,9 +14,9 @@
     <div class="container">
       <%= render "common/navbar" %>
       <%= notice_message %>
-      <%= yield %>
+      <div class="jumbotron">
+        <%= yield %>
+      </div>
     </div>
-
-    <%= render "common/footer" %>
 </body>
 </html>
