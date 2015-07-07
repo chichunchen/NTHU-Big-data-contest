@@ -1,23 +1,21 @@
-<div class="col-md-12">
-  <div class="group">
-    <% unless current_user.has_join_group? %>
-      <%= link_to("創立隊伍", new_group_path, class: "btn btn-primary pull-right") %>
-    <% end %>
-  </div>
+<% if @groups.blank? %>
+  <br />
+  <div class="alert alert-warning" role="alert">目前尚無隊伍</div>
+<% else %>
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
+        <td>Id</td>
         <td>Title</td>
       </tr>
     </thead>
     <tbody>
       <% @groups.each do |group| %>
         <tr>
-          <td>#</td>
+          <td><%= group.id %></td>
           <td><%= link_to(group.title, group_path(group)) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
+<% end %>
