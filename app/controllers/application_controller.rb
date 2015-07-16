@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
                                                            :school, :department, :day, :grade,
                                                                    skills: [ :name, :category]) }
   end
+
+  def admin_check
+    unless current_user.has_role? "admin"
+      redirect_to :root, notice: "請不要自己輸入網址"
+    end
+  end
 end
