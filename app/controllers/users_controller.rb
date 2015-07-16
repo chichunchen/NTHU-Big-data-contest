@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :validate_search_key , :only => [:search]
 #  before_action :admin_check
 
   def index
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
 
   def search
     if @query_string.present?
-      search_result = User.ransack(@search_criteria).result(:distinct => true)
+      search_result = User.need_group.ransack(@search_criteria).result(:distinct => true)
       @users = search_result.paginate(:page => params[:page], :per_page => 20 )
     end
   end
@@ -30,8 +31,7 @@ class UsersController < ApplicationController
     @search_criteria = search_criteria(@query_string)
   end
 
-
   def search_criteria(query_string)
-    { :name_or_school_department => query_string }
+    { :name_or_school_cont => query_string }
   end
 end
