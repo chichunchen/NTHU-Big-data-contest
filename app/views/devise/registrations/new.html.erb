@@ -10,9 +10,9 @@
                         file: :horizontal_file_input,
                         boolean: :horizontal_boolean} ) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, label: "信箱", required: true, autofocus: true %>
+    <%= f.input :password, required: true, label: "密碼", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, label: "驗證密碼", required: true %>
     <%= f.input :name, label: "真實姓名", required: true %>
     <%= f.input :nation, label: "國籍", collection: ["中華民國（台灣）籍", "外國籍"], required: true, prompt: "請選擇國籍" %>
     <%= f.input :identity, label: "身分證字號", required: true %>
@@ -22,9 +22,9 @@
     <%= f.input :gender, label: "性別", collection: [:male, :female], prompt: "請選擇", required: true %>
     <%= f.association :skills, label: "技能", as: :check_boxes %>
     <%= f.input :school, label: "學校", as: :text %>
-    <%= f.input :department, label: "系所", as: :text  %>
+    <%= f.input :department, label: "系所", as: :text %>
     <%= f.input :grade, label: "年級", collection: 1..4, required: true, prompt: "請選擇年級" %>
-    <%= f.input :day, label: "日間/夜間", as: :radio_buttons %>
+    <%= f.input :day, label: "日間/夜間", collection: ['日', '夜'], prompt: "請選擇日間/夜間" %>
     <%= f.input :experience, label: "相關經歷", as: :text, hint: "描述您曾參與過相關競賽與成果" %>
     <%= f.input :course, label: "相關課程", as: :text, hint: "您曾經參與過的課程" %>
     <%= f.input :phone, label: "聯絡電話（市話）", required: true, as: :tel %>

@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150716120920) do
     t.string   "school"
     t.string   "department"
     t.integer  "grade"
-    t.boolean  "day"
+    t.string   "day"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

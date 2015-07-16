@@ -3,6 +3,6 @@ class AddEducationDetailsToUser < ActiveRecord::Migration
     add_column :users, :school, :string
     add_column :users, :department, :string
     add_column :users, :grade, :integer
-    add_column :users, :day, :boolean
+    add_column :users, :day, :string
   end
 end
