@@ -13,6 +13,10 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :school, label: "學校", as: :text %>
+    <%= f.input :department, label: "系所", as: :text  %>
+    <%= f.input :grade, label: "年級", collection: 1..4, required: true, prompt: "請選擇年級" %>
+    <%= f.input :day, label: "日間/夜間", as: :radio_buttons %>
     <%= f.association :skills, label: "相關技能", as: :check_boxes %>
     <%= f.input :experience, label: "相關經歷", as: :text, hint: "描述您曾參與過相關競賽與成果" %>
     <%= f.input :course, label: "相關課程", as: :text, hint: "您曾經參與過的課程" %>
@@ -25,9 +29,3 @@
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
