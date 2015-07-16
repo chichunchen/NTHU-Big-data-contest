@@ -6,14 +6,18 @@
 </h1>
 
 <p>
-  單位: <br />
-  (學校+科系+等級別+日夜別+年級)<br /><br />
+  學校: <%= @user.school %><br />
+  科系: <%= @user.department %><br />
+  年級: <%= @user.grade %><br />
+  日夜別: <%= @user.day %><br /><br />
+
   相關專長:<br />
   <%=
       @user.skills.each do |skill|
         skill
       end
   %><br ><br />
+
   相關經歷:<br />
   <%= @user.experience %><br ><br />
   相關課程:<br />

@@ -10,17 +10,25 @@
 <p>您可以<a href="http://140.114.53.201/users/edit">在此</a>修改報名資料。</p>
 
 <p>切結書（<%= link_to "下載", 'http://140.114.53.201/public/' %>）:尚未收到您的切結書，請務必寄回
-    『30013新竹市光復路二段101好國立清華大學工程一館R806，半導體大數據分析競賽專案小組』收。</p>
+  『30013新竹市光復路二段101好國立清華大學工程一館R806，半導體大數據分析競賽專案小組』收。</p>
 
-姓名：<%= @user.name %><br />
-電子信箱：<%= @user.email %><br />
-國籍：<%= @user.nation %><br />
-身分證字號：<%= @user.identity %><br />
-出生日期：<%= @user.birthday %><br />
-性別：<%= @user.gender %><br />
-技能：<%= @user.skills.inspect %><br />
-經歷：<%= @user.experience %><br />
-課程：<%= @user.course %><br />
-電話號碼(市話)<%= @user.phone %><br />
-手機號碼<%= @user.cell_phone %><br />
-地址：<%= @user.address %><br />
+<strong>請檢查您的資料是否有錯</strong>
+
+<div class="well">
+  姓名：<%= @user.name %><br />
+  電子信箱：<%= @user.email %><br />
+  國籍：<%= @user.nation %><br />
+  身分證字號：<%= @user.identity %><br />
+  出生日期：<%= @user.birthday %><br />
+  性別：<%= @user.gender %><br />
+  技能：<%= @user.skills.inspect %><br />
+  學校： <%= @user.school %>
+  系所： <%= @user.department %>
+  年級： <%= @user.grade %>
+  日夜別： <%= @user.day %>
+  經歷：<%= @user.experience %><br />
+  課程：<%= @user.course %><br />
+  電話號碼(市話)<%= @user.phone %><br />
+  手機號碼<%= @user.cell_phone %><br />
+  地址：<%= @user.address %><br />
+</div>

@@ -32,6 +32,6 @@ class UsersController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { :name_or_school_cont => query_string }
+    { :name_or_school_or_department_cont => query_string }
   end
 end

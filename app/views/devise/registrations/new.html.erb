@@ -51,15 +51,18 @@
     $(".user_agree_job_bank").hide();
     $(".user_password_job_bank").hide();
 
-    $(".user_has_job_bank").change(function() {
-      // if($(".user_has_job_bank_false").attr("checked")) {
-        $(".user_agree_job_bank").show();
-      // } else {
-      //   $(".user_agree_job_bank").hide();
-      // }
+    $("#user_has_job_bank_false").change(function() {
+      $(".user_agree_job_bank").show();
     })
-    $(".user_agree_job_bank").change(function() {
+    $("#user_has_job_bank_true").change(function() {
+      $(".user_agree_job_bank").hide();
+    })
+
+    $("#user_agree_job_bank_true").change(function() {
       $(".user_password_job_bank").show();
+    })
+    $("#user_agree_job_bank_false").change(function() {
+      $(".user_password_job_bank").hide();
     })
   })
 </script>

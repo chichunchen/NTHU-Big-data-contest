@@ -5,18 +5,21 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>id</th>
         <th>名字</th>
-        <th></th>
+        <th>學校</th>
+        <th>系所</th>
       </tr>
     </thead>
     <% @users.each do |user| %>
       <tr>
         <td>
-          <%= user.id %>
+          <%= user.name %>
         </td>
         <td>
-          <%= user.name %>
+          <%= user.school %>
+        </td>
+        <td>
+          <%= user.department %>
         </td>
         <td>
           <%= link_to "詳細資訊", user_path(user) %>
