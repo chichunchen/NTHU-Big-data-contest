@@ -8,9 +8,10 @@
   <p>
     <strong>
       <% if current_user && current_user.ustatus = Ustatus.find_by(name: "缺切結書") %>
-        <div class="alert alert-danger" role="alert">您目前未繳交切結書</div>
-        <a href=<%= root_url + "/BDC2015切結書.pdf" %> download type="button" class="btn btn-info">下載切結書</a>
-        <%= mail_to "unison@ie.nthu.edu.tw", "繳交切結書", subject: current_user.name + "繳交切結書", class: "btn btn-success" %>
+        <div class="alert alert-danger" role="alert">
+          您目前未繳交切結書
+          <a href=<%= root_url + "/BDC2015切結書.pdf" %> download type="button">點此下載</a>
+        </div>
       <% end %>
     </strong>
   </p>
