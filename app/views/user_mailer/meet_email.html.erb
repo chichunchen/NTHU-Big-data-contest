@@ -1,35 +1,43 @@
 <strong><%= @user.name %>同學您好：</strong>
 
 <p>有一位<%= @current_user.name %>同學透過第二屆半導體大數據競賽報名系統查詢到你的資料，
-    想與你聯繫做進一步交流，他的個人相關資料如下:
+  想與你聯繫做進一步交流，他的個人相關資料如下:
 </p>
 
 <br />
 
-<p>
-  姓名：<%= @current_user.name %>
-</p>
-<p>
-  單位：
-</p>
-<p>
-  相關技能：
-</p>
-<p>
-  相關經歷：<%= @current_user.experience %>
-</p>
-<p>
-  相關課程：<%= @current_user.course %>
-</p>
-<p>
-  參與BDC課程：
-</p>
+<div class="jumbotron">
+  <p>
+    姓名：<%= @current_user.name %>
+  </p>
+  <p>
+    學校: <%= @user.school %><br />
+  </p>
+  <p>
+    科系: <%= @user.department %><br />
+  </p>
+  <p>
+    年級: <%= @user.grade %><br />
+  </p>
+  <p>
+    相關技能：
+  </p>
+  <p>
+    相關經歷：<%= @current_user.experience %>
+  </p>
+  <p>
+    相關課程：<%= @current_user.course %>
+  </p>
+  <p>
+    參與BDC課程：
+  </p>
 
-<hr />
-<p>
-  請回覆是否同意主辦單位提供你的E-mail給對方以互相聯繫促進交流與組隊。
-  <ul>
-    <li>是，我同意讓對方取得我的聯絡資訊</li>
-    <li>否，我不想讓對方取得我的聯絡資訊</li>
-  </ul>
-</p>
+  <hr />
+  <p>
+    請回覆是否同意主辦單位提供你的E-mail給對方以互相聯繫促進交流與組隊。
+    <ul>
+      <li>是，我同意讓對方取得我的聯絡資訊</li>
+      <li>否，我不想讓對方取得我的聯絡資訊</li>
+    </ul>
+  </p>
+</div>

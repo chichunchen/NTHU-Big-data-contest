@@ -5,6 +5,8 @@
   <% end %>
 </h1>
 
+<hr />
+
 <p>
   學校: <%= @user.school %><br />
   科系: <%= @user.department %><br />
@@ -22,5 +24,5 @@
   相關課程:<br />
   <%= @user.course %><br ><br />
   參與BDC課程: <br >
-  狀態: temp <br />
+  狀態: <%= @user.ustatus.name %><br />
 </p>
