@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     redirect_to user_path(@user), notice: "已成功寄送邀請信件"
   end
 
+  def agree
+    @user = User.find(params[:id])
+    UserMailer.agree_mail(@user).deliver_later
+  end
+
+  def disagree
+
+  end
+
   def search
     if @query_string.present?
       search_result = User.need_group.ransack(@search_criteria).result(:distinct => true)

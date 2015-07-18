@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     member do
       get :meet
+      get :agree
     end
     collection do
       get :search

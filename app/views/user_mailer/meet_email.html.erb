@@ -1,6 +1,6 @@
 <strong><%= @user.name %>同學您好：</strong>
 
-<p>有一位<%= @current_user.name %>同學透過第二屆半導體大數據競賽報名系統查詢到你的資料，
+<p><%= @current_user.name %>同學透過第二屆半導體大數據競賽報名系統，查詢到你的資料，
   想與你聯繫做進一步交流，他的個人相關資料如下:
 </p>
 
@@ -31,13 +31,19 @@
   <p>
     參與BDC課程：
   </p>
-
-  <hr />
-  <p>
-    請回覆是否同意主辦單位提供你的E-mail給對方以互相聯繫促進交流與組隊。
-    <ul>
-      <li>是，我同意讓對方取得我的聯絡資訊</li>
-      <li>否，我不想讓對方取得我的聯絡資訊</li>
-    </ul>
-  </p>
 </div>
+
+<hr />
+<p>
+  <strong>請回覆是否同意主辦單位提供你的E-mail給對方以互相聯繫促進交流與組隊。</strong>
+  <ul>
+    <%= mail_to @current_user.email,
+      "是，我同意讓對方取得我的聯絡資訊",
+      subject: "是，我同意讓對方取得我的聯絡資訊",
+      body: "#{@current_user.name}你好，我的email是 #{@user.email}，手機是 #{@user.cell_phone}",
+      class: "btn btn-success"
+    %>
+
+    <%= link_to "否，我不想讓對方取得我的聯絡資訊", "#", class: "btn btn-warning" %>
+  </ul>
+</p>

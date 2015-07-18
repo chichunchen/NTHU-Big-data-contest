@@ -7,10 +7,15 @@ class UserMailer < ApplicationMailer
   end
 
   def meet_email current_user, user
-    @greeting = "Hi"
     @current_user = current_user
     @user = user
 
     mail to: @user.email, subject: '有人想認識你喔'
+  end
+
+  def agree_mail user
+    @user = user
+
+    mail to: @user.email, subject: '同意讓您取得聯絡資訊'
   end
 end
