@@ -11,6 +11,20 @@ Gstatus.create([name: '通過初賽資格審核'])
 Gstatus.create([name: '通過復賽資格審核'])
 Gstatus.create([name: '晉級決賽'])
 
+Skill.create(name: "R語言", category: "分析專長")
+Skill.create(name: "SPSS軟體", category: "分析專長")
+Skill.create(name: "SAS軟體", category: "分析專長")
+Skill.create(name: "統計分析/多變量分析", category: "分析專長")
+
+Skill.create(name: "SQL", category: "資訊專長")
+Skill.create(name: "Hadoop", category: "資訊專長")
+Skill.create(name: "平行運算", category: "資訊專長")
+Skill.create(name: "機器學習", category: "資訊專長")
+
+Skill.create(name: "半導體製程", category: "領域知識專長")
+Skill.create(name: "生產製造管理", category: "領域知識專長")
+
+
 # 最高權限帳號
 admin = User.create!(
   name: "管理員",
@@ -54,4 +68,5 @@ admin.roles << Role.find_by(name: 'admin')
 #     ustatus: Ustatus.all.sample
 #   )
 # end
+
 

@@ -20,7 +20,7 @@
                               end_year: Date.today.year - 12,
                               order: [:year, :month, :day] %>
     <%= f.input :gender, label: "性別", collection: [:male, :female], prompt: "請選擇", required: true %>
-    <%= f.association :skills, label: "技能", as: :check_boxes %>
+    <%= f.association :skills, label: "技能" %>
     <%= f.input :school, label: "學校", as: :text %>
     <%= f.input :department, label: "系所", as: :text %>
     <%= f.input :grade, label: "年級", collection: 1..4, required: true, prompt: "請選擇年級" %>

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
                                                            :skills => [ :name, :category ] )}
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:password, :password_confirmation, :current_password,
                                                                    :experience, :course, :phone, :cell_phone, :address,
-                                                           :school, :department, :day, :grade,
+                                                                   :school, :department, :day, :grade,
                                                                    skills: [ :name, :category]) }
   end
 
