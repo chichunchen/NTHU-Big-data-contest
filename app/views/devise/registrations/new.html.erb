@@ -20,11 +20,10 @@
                               end_year: Date.today.year - 12,
                               order: [:year, :month, :day] %>
     <%= f.input :gender, label: "性別", collection: [:male, :female], prompt: "請選擇", required: true %>
-    <%= f.association :skills, label: "技能" %>
+    <%= f.association :skills, label: "技能", as: :check_boxes %>
     <%= f.input :school, label: "學校", as: :text %>
     <%= f.input :department, label: "系所", as: :text %>
     <%= f.input :grade, label: "年級", collection: 1..4, required: true, prompt: "請選擇年級" %>
-    <%= f.input :day, label: "日間/夜間", collection: ['日', '夜'], prompt: "請選擇日間/夜間" %>
     <%= f.input :experience, label: "相關經歷", as: :text, hint: "描述您曾參與過相關競賽與成果" %>
     <%= f.input :course, label: "相關課程", as: :text, hint: "您曾經參與過的課程" %>
     <%= f.input :phone, label: "聯絡電話（市話）", required: true, as: :tel %>
@@ -56,6 +55,7 @@
     })
     $("#user_has_job_bank_true").change(function() {
       $(".user_agree_job_bank").hide();
+      $(".user_password_job_bank").hide();
     })
 
     $("#user_agree_job_bank_true").change(function() {
