@@ -19,11 +19,16 @@
 @import "bootstrap";
 
 body {
-  background-image: url('bd_background_big.jpg');
+  // background-image: url('bd_background_big.jpg');
+  background-image: asset-url('bd_background_big');
+  background-attachment: fixed;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+
 
   h2 {
     font-size: 35px;
-    color: brown;
+    color: #7c2e9a;
   }
 }
 
