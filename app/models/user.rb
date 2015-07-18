@@ -52,6 +52,8 @@ class User < ActiveRecord::Base
 
   def set_default
     self.ustatus = Ustatus.find_by(name: "缺切結書")
+    # normal is compared to admin
+    self.roles << Role.find_by(name: "normal")
     self.save
   end
 end
