@@ -14,11 +14,12 @@ class ApplicationController < ActionController::Base
                                                            :cell_phone, :address, :has_job_bank, :agree_job_bank,
                                                            :password_job_bank,
                                                            :school, :department, :system, :grade,
-                                                           :skills => [ :name, :category ] )}
+                                                           :skill_ids => [ ] )}
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:password, :password_confirmation, :current_password,
                                                                    :experience, :course, :phone, :cell_phone, :address,
                                                                    :school, :department, :system, :grade,
-                                                                   skills: [ :name, :category]) }
+                                                                   :user_skills => [ :user_id, :skill_id ],
+                                                                   :skill_ids => [ ] )}
   end
 
   def admin_check

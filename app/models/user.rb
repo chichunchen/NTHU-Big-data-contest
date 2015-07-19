@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
   validates :address, presence: :true
 
   has_and_belongs_to_many :roles
-  has_and_belongs_to_many :skills
+  has_many :user_skills
+  has_many :skills, through: :user_skills
   belongs_to :group
   belongs_to :ustatus
 
