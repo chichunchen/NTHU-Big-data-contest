@@ -9,6 +9,24 @@
             半導體大數據分析競賽專案小組」完成個人報名，方能使用參賽者查詢功能進行隊伍媒合。
           <a href=<%= root_url + "/BDC2015切結書.pdf" %> download type="button">點此下載</a>
         </div>
+      <% elsif current_user && current_user.ustatus == Ustatus.find_by(name: "完成報名但未組隊") %>
+        <div class="alert alert-danger" role="alert">
+          您已完成報名但尚未組隊，建議您可透過參賽者查詢功能進行隊伍媒合，並至右上方選單下載組隊表檔案，
+          填寫完成後請於2015/9/16 17:00之前將電子檔寄至unison@ie.nthu.edu.tw，並印出紙本經隊長簽名後寄回
+          「30013 新竹市光復路二段101號清華大學工程一館806室，半導體大數據分析競賽專案小組收」進行隊伍審核。
+        </div>
+      <% elsif current_user && current_user.ustatus == Ustatus.find_by(name: "完成報名與組隊") %>
+        <div class="alert alert-danger" role="alert">
+          恭喜您已完成隊伍組隊，請至上方「隊伍」選項查看隊伍資訊。
+        </div>
+      <% elsif current_user && current_user.ustatus == Ustatus.find_by(name: "缺學生證影本") %>
+        <div class="alert alert-danger" role="alert">
+          恭喜您晉級複賽，請上傳您的學生證正反面影本進行複賽審核。
+        </div>
+      <% elsif current_user && current_user.ustatus == Ustatus.find_by(name: "通過複賽驗證") %>
+        <div class="alert alert-danger" role="alert">
+          恭喜您晉級複賽，您的學生證影本已通過複賽審核，請至上方「隊伍」選項查看隊伍資訊。
+        </div>
       <% end %>
     </strong>
   </p>

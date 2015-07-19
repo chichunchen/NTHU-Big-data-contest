@@ -8,8 +8,11 @@
 <p>您目前已完成競賽線上報名資料填寫。</p>
 
 <p>您可以<a href="http://140.114.53.201/users/edit">在此</a>修改報名資料。</p>
-<p>切結書（<%= link_to "下載", 'http://140.114.53.201/BDC2015切結書.pdf' %>）:尚未收到您的切結書，請務必寄回
-  『30013新竹市光復路二段101好國立清華大學工程一館R806，半導體大數據分析競賽專案小組』收。</p>
+<p>切結書（<%= link_to "下載", 'http://140.114.53.201/BDC2015切結書.pdf' %>）
+  您尚未完成報名手續，請下載切結書檔案，詳閱內容事項後親筆簽名，將正本寄回
+  「30013 新竹市光復路二段 101 號國立清華大學工程一館 R806，半導體大數據分析競賽專案小組」
+  ，之後可於報名系統中查詢審核狀態。
+</p>
 
 <strong>請檢查您的資料是否有錯:</strong>
 
@@ -20,13 +23,14 @@
   身分證字號：<%= @user.identity %><br />
   出生日期：<%= @user.birthday %><br />
   性別：<%= @user.gender %><br />
-  技能：<%= @user.skills.inspect %><br />
+  技能：<%= %><br />
   學校： <%= @user.school %>
   系所： <%= @user.department %>
+  學制： <%= @user.school %>
   年級： <%= @user.grade %>
   經歷：<%= @user.experience %><br />
   課程：<%= @user.course %><br />
-  電話號碼(市話)<%= @user.phone %><br />
-  手機號碼<%= @user.cell_phone %><br />
+  電話號碼(市話)：<%= @user.phone %><br />
+  手機號碼：<%= @user.cell_phone %><br />
   地址：<%= @user.address %><br />
 </div>
