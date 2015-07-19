@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @current_user = current_user
     @user = user
 
-    mail to: @user.email, subject: '有人想認識你喔'
+    mail to: @user.email, subject: '半導體大數據競賽組隊邀請'
   end
 
   def agree_mail user

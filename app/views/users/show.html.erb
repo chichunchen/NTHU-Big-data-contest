@@ -1,7 +1,7 @@
 <h1>
   <%= @user.name %>
   <% if current_user.ustatus.eql? Ustatus.find_by(name: "完成報名但未組隊") and @user != current_user %>
-    <%= link_to "我想認識他", meet_user_path, class:"btn btn-success btn-lg pull-right" %>
+    <%= link_to "邀請組隊", meet_user_path, class:"btn btn-success btn-lg pull-right" %>
   <% end %>
 </h1>
 
