@@ -12,18 +12,17 @@
   科系: <%= @user.department %><br />
   學制: <%= @user.system %><br />
   年級: <%= @user.grade %><br />
+  <br />
 
   相關專長:<br />
-  <%=
-      @user.skills.each do |skill|
-        skill
-      end
-  %><br ><br />
+  <% @user.skills.each do |skill| %>
+    <%= skill.name %>&nbsp;
+  <% end %>
+  <br /><br />
 
   相關經歷:<br />
   <%= @user.experience %><br ><br />
   相關課程:<br />
   <%= @user.course %><br ><br />
-  參與BDC課程: <br >
   狀態: <%= @user.ustatus.name %><br />
 </p>

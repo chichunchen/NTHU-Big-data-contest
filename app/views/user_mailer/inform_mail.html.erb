@@ -23,7 +23,12 @@
   身分證字號：<%= @user.identity %><br />
   出生日期：<%= @user.birthday %><br />
   性別：<%= @user.gender %><br />
-  技能：<%= %><br />
+  相關專長:<br />
+  <% @user.skills.each do |skill| %>
+    <%= skill.name %>&nbsp;
+  <% end %>
+  <br /><br />
+
   學校： <%= @user.school %>
   系所： <%= @user.department %>
   學制： <%= @user.school %>
