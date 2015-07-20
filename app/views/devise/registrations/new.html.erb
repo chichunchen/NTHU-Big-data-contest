@@ -20,7 +20,7 @@
                               end_year: Date.today.year - 12,
                               order: [:year, :month, :day] %>
     <%= f.input :gender, label: "性別", collection: [:male, :female], prompt: "請選擇", required: true %>
-    <%= f.association :skills, label: "相關專長", as: :check_boxes, required: true %>
+    <%= f.association :skills, label: "相關專長", as: :check_boxes, required: true, hint: "請至少選擇一項相關專長以定位您在隊伍中的角色" %>
     <%= f.input :school, label: "學校", hint: "請填寫學校全名以利查核，如：國立清華大學", required: true %>
     <%= f.input :department, label: "系所", hint: "請填寫系所全名以利查核，如：工業工程與工程管理學系", required: true %>
     <%= f.input :system, label: "學制", collection: ["大學部", "碩士班", "博士班"], required: true, prompt: "請選擇學制" %>
