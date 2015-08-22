@@ -12,21 +12,39 @@
 
     <div class="form-group col-md-4">
       <%= f.label :年級 %>
-      <%= f.select :grade_eq, options_for_select(1..10, params[:q] ? params[:q][:grade_eq] : nil), {prompt: "年級"}, class: "form-control" %>
+      <%= f.select :grade_eq, options_for_select(1..10, params[:q] ? params[:q][:grade_eq] : nil),
+            {prompt: "年級"}, class: "form-control" %>
     </div>
   </div>
 
-  <div class="form-group">
-    <%= f.search_field :name_cont, class: "form-control", placeholder: "人名..." %>
+  <div class="adv-search hidden">
+    <div class="form-group">
+      <%= f.search_field :name_cont, class: "form-control", placeholder: "人名..." %>
+    </div>
+
+    <div class="form-group">
+      <%= f.search_field :skills_name_cont, class: "form-control", placeholder: "技能..." %>
+    </div>
+
+    <div class="form-group">
+      <%= f.search_field :experience_cont, class: "form-control", placeholder: "相關經驗..." %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.search_field :skills_name_cont, class: "form-control", placeholder: "技能..." %>
+  <div class="btn-group" role="group">
+    <button type="button" name="button" class="btn btn-info adv-btn">展開進階搜尋</button>
+    <%= f.submit "搜尋", class: "btn btn-default" %>
   </div>
-
-  <div class="form-group">
-    <%= f.search_field :experience_cont, class: "form-control", placeholder: "相關經驗..." %>
-  </div>
-
-  <%= f.submit "搜尋", class: "btn btn-default" %>
 <% end %>
+
+<script>
+  $('.adv-btn').on('click', function (arguments) {
+    var advSearch = $('.adv-search');
+    advSearch.toggleClass('hidden');
+    if (advSearch.hasClass('hidden')) {
+      $(this).text("展開進階選項");
+    } else {
+      $(this).text('收起進階選項');
+    }
+  });
+</script>

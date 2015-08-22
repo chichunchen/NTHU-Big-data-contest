@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     # @users = User.need_group.page(params[:page]).per_page(15)
     @q = User.ransack(params[:q])
     @users = @q.result.includes(:skills)
-    @users = @users.page(params[:page]).per_page(15)
+    @users = @users.need_group.page(params[:page]).per_page(15)
   end
 
   def show
