@@ -12,7 +12,7 @@
 
     <div class="form-group col-md-4">
       <%= f.label :年級 %>
-      <%= f.select :grade_eq, options_for_select(1..10, params[:q][:grade_eq]), {prompt: "年級"}, class: "form-control" %>
+      <%= f.select :grade_eq, options_for_select(1..10, params[:q] ? params[:q][:grade_eq] : nil), {prompt: "年級"}, class: "form-control" %>
     </div>
   </div>
 
