@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :validate_search_key , :only => [:search]
-#  before_action :admin_check
 
   def index
-    @users = User.need_group.page(params[:page]).per_page(15)
+    # @users = User.need_group.page(params[:page]).per_page(15)
+    @q = User.ransack(params[:q])
+    @users = @q.result.includes(:skills)
+    @users = @users.page(params[:page]).per_page(15)
   end
 
   def show
@@ -23,14 +25,16 @@ class UsersController < ApplicationController
   end
 
   def disagree
-
   end
 
   def search
+    @users = User.need_group
+
     if @query_string.present?
-      search_result = User.need_group.ransack(@search_criteria).result(:distinct => true)
-      @users = search_result.paginate(:page => params[:page], :per_page => 20 )
+      @users = @users.ransack(@search_criteria).result(:distinct => true)
     end
+
+    @users = @users.paginate(:page => params[:page], :per_page => 20 )
   end
 
   protected
