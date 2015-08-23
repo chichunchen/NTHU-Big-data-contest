@@ -1,8 +1,8 @@
 <%= search_form_for @q do |f| %>
   <div class="row">
     <div class="form-group col-md-4">
-      <%= f.label "學校" %>
-      <%= f.search_field :school_cont, class: "form-control" %>
+      <%= f.label "參與BDC課程" %>
+      <%= f.search_field :course_cont, class: "form-control" %>
     </div>
 
     <div class="form-group col-md-4">
@@ -12,7 +12,7 @@
 
     <div class="form-group col-md-4">
       <%= f.label :年級 %>
-      <%= f.select :grade_eq, options_for_select(1..10, params[:q] ? params[:q][:grade_eq] : nil),
+      <%= f.select :system_eq, options_for_select(["大學部", "碩士班", "博士班"], params[:q] ? params[:q][:system_eq] : nil),
             {prompt: "年級"}, class: "form-control" %>
     </div>
   </div>
@@ -23,7 +23,9 @@
     </div>
 
     <div class="form-group">
-      <%= f.search_field :skills_name_cont, class: "form-control", placeholder: "技能..." %>
+      <%= f.select :skills_name_cont,
+            options_for_select(Skill.pluck(:name), params[:q] ? params[:q][:skills_name_cont] : nil),
+            {class: "form-control"} %>
     </div>
 
     <div class="form-group">
@@ -38,6 +40,11 @@
 <% end %>
 
 <script>
+  var storeToggleState = function(advSearch) {
+    localStorage.setItem('advSearch', advSearch.is( ":visible" ));
+    console.log(localStorage.getItem('advSearch'))
+  }
+
   $('.adv-btn').on('click', function (arguments) {
     var advSearch = $('.adv-search');
     advSearch.toggleClass('hidden');
@@ -46,5 +53,13 @@
     } else {
       $(this).text('收起進階選項');
     }
+
+    storeToggleState(advSearch);
   });
+
+  if (localStorage.getItem('advSearch') === "true") {
+    console.log("default true");
+    var advSearch = $('.adv-search');
+    advSearch.toggleClass('hidden');
+  }
 </script>
