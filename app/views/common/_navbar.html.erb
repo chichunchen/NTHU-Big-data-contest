@@ -19,7 +19,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li><a href="/users">組隊媒合</a></li>
+        <% if current_user && current_user.ustatus == Ustatus.find_by(name: "完成報名但未組隊") %>
+          <li><a href="/users">組隊媒合</a></li>
+        <% end %>
         <% if current_user && current_user.group %>
           <li><%= link_to "隊伍資訊", group_path(current_user.group) %></li>
         <% end %>
