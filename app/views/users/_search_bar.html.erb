@@ -20,15 +20,12 @@
   <div class="adv-search hidden">
     <div class="form-group">
       <%= f.select :courses_title_cont,
-            options_for_select(Course.pluck(:title), params[:q] ? params[:q][:courses_name_cont] : nil),
-            {class: "form-control"} %>
+            options_for_select(Course.pluck(:title), params[:q] ? params[:q][:courses_name_cont] : nil) %>
+
+      <%= f.select :skills_name_cont,
+            options_for_select(Skill.pluck(:name), params[:q] ? params[:q][:skills_name_cont] : nil) %>
     </div>
 
-    <div class="form-group">
-      <%= f.select :skills_name_cont,
-            options_for_select(Skill.pluck(:name), params[:q] ? params[:q][:skills_name_cont] : nil),
-            {class: "form-control"} %>
-    </div>
 
     <div class="form-group">
       <%= f.search_field :experience_cont, class: "form-control", placeholder: "相關經驗..." %>
