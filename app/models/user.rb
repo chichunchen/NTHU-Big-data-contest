@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :user_skills, dependent: :destroy
   has_many :skills, through: :user_skills
+  has_many :user_courses, dependent: :destroy
+  has_many :courses, through: :user_courses
   belongs_to :group
   belongs_to :ustatus
 
