@@ -1,4 +1,8 @@
 class Group < ActiveRecord::Base
+  mount_uploader :tryout_file, TryoutFileUploader
+  mount_uploader :preliminary_file, PreliminaryFileUploader
+  mount_uploader :final_file, FinalFileUploader
+
   validates :title, presence: true
   has_many :users
   belongs_to :gstatus

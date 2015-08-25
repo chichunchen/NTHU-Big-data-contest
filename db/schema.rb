@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825081123) do
+ActiveRecord::Schema.define(version: 20150825125712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20150825081123) do
     t.string   "final_ip"
     t.string   "final_account"
     t.string   "final_password"
+    t.string   "tryout_file"
+    t.string   "preliminary_file"
+    t.string   "final_file"
   end
 
   add_index "groups", ["gstatus_id"], name: "index_groups_on_gstatus_id", using: :btree
