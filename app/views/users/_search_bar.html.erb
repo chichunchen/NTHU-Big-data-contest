@@ -38,27 +38,3 @@
   </div>
 <% end %>
 
-<script>
-  var storeToggleState = function(advSearch) {
-    localStorage.setItem('advSearch', advSearch.is( ":visible" ));
-    console.log(localStorage.getItem('advSearch'))
-  }
-
-  $('.adv-btn').on('click', function (arguments) {
-    var advSearch = $('.adv-search');
-    advSearch.toggleClass('hidden');
-    if (advSearch.hasClass('hidden')) {
-      $(this).text("展開進階選項");
-    } else {
-      $(this).text('收起進階選項');
-    }
-
-    storeToggleState(advSearch);
-  });
-
-  if (localStorage.getItem('advSearch') === "true") {
-    console.log("default true");
-    var advSearch = $('.adv-search');
-    advSearch.toggleClass('hidden');
-  }
-</script>
