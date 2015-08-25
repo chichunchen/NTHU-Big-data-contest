@@ -3,7 +3,7 @@ storeToggleState = (advSearch="true") ->
   console.log(localStorage.getItem('advSearch'))
 
 $ ->
-  $('.adv-btn').on('click', ->
+  $('.adv-btn').click ->
     advSearch = $('.adv-search');
     advSearch.toggleClass('hidden');
     if advSearch.hasClass('hidden')
@@ -12,9 +12,9 @@ $ ->
       $(@).text("收起進階選項")
 
     storeToggleState(advSearch)
-  )
 
-if localStorage.getItem('advSearch' == "true")
-  console.log "default true"
-  advSearch = $ ".adv-search"
-  advSearch.toggleClass "hidden"
+
+  if localStorage.getItem('advSearch') == "true"
+    console.log "default true"
+    advSearch = $ ".adv-search"
+    advSearch.toggleClass "hidden"
