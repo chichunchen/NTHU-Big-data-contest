@@ -1,6 +1,6 @@
 storeToggleState = (advSearch="true") ->
   localStorage.setItem('advSearch', advSearch.is(":visible"));
-  console.log(localStorage.getItem('advSearch'))
+  # console.log(localStorage.getItem('advSearch'))
 
 $ ->
   $('.adv-btn').click ->
@@ -15,6 +15,6 @@ $ ->
 
 
   if localStorage.getItem('advSearch') == "true"
-    console.log "default true"
+    # console.log "default true"
     advSearch = $ ".adv-search"
     advSearch.toggleClass "hidden"
