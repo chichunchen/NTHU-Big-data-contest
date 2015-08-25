@@ -12,18 +12,21 @@
 
     <div class="form-group col-md-4">
       <%= f.label :學制 %>
-      <%= f.select :system_eq, options_for_select(["大學部", "碩士班", "博士班"], params[:q] ? params[:q][:system_eq] : nil),
-            {prompt: "年級"}, class: "form-control" %>
+      <%= f.select :system_eq,
+            options_for_select(["大學部", "碩士班", "博士班"], params[:q] ? params[:q][:system_eq] : nil),
+            {prompt: "-- 請選擇學制 --"}, class: "form-control" %>
     </div>
   </div>
 
   <div class="adv-search hidden">
     <div class="form-group">
-      <%= f.select :courses_title_cont,
-            options_for_select(Course.pluck(:title), params[:q] ? params[:q][:courses_name_cont] : nil) %>
+      <%= f.select :courses_title_eq,
+            options_for_select(Course.pluck(:title), params[:q] ? params[:q][:courses_name_eq] : nil),
+            {prompt: "-- 選擇課程 --"} %>
 
-      <%= f.select :skills_name_cont,
-            options_for_select(Skill.pluck(:name), params[:q] ? params[:q][:skills_name_cont] : nil) %>
+      <%= f.select :skills_name_eq,
+            options_for_select(Skill.pluck(:name), params[:q] ? params[:q][:skills_name_eq] : nil),
+            {prompt: "-- 選擇參賽者專長 --"} %>
     </div>
 
 
