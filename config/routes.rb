@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resources :courses
   root 'welcome#index'
 
-  get 'group', to: 'groups#show'
+  get 'group', to: 'group#show'
 end

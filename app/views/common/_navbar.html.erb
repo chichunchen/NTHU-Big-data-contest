@@ -36,7 +36,7 @@
 
           <li>
             <% if current_user && current_user.has_join_group? %>
-              <li><%= link_to "隊伍資訊", group_path(current_user.group) %></li>
+              <li><%= link_to "隊伍資訊", group_path %></li>
             <% end %>
           </li>
 
