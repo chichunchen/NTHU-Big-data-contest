@@ -12,7 +12,6 @@
  *
  *= require welcome
  *= require users
- *= require select2-bootstrap
  *= require_self
  */
 
@@ -26,7 +25,6 @@ body {
   background-position: 100% 100%;
   background-repeat: no-repeat;
 
-
   h2 {
     font-size: 35px;
     color: #7c2e9a;
@@ -36,17 +34,4 @@ body {
     font-size: 14px;
     color: #B32323;
   }
-}
-
-#user_birthday_1i {
-  width: 150px;
-  border: 1px solid #ccc;
-}
-#user_birthday_2i {
-  width: 150px;
-  border: 1px solid #ccc;
-}
-#user_birthday_3i {
-  width: 150px;
-  border: 1px solid #ccc;
 }
