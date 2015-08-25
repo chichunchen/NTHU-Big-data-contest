@@ -8,4 +8,12 @@ module UsersHelper
     end
     return first
   end
+
+  def hide_full_name user
+    unless current_user.group == user.group
+      first_name user
+    else
+      user.name
+    end
+  end
 end

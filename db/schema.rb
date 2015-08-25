@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823083654) do
+ActiveRecord::Schema.define(version: 20150825081123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,20 @@ ActiveRecord::Schema.define(version: 20150823083654) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "status_note"
     t.integer  "gstatus_id"
+    t.string   "software"
+    t.string   "tryout_ip"
+    t.string   "tryout_account"
+    t.string   "tryout_password"
+    t.string   "preliminary_ip"
+    t.string   "preliminary_account"
+    t.string   "preliminary_password"
+    t.string   "final_ip"
+    t.string   "final_account"
+    t.string   "final_password"
   end
 
   add_index "groups", ["gstatus_id"], name: "index_groups_on_gstatus_id", using: :btree

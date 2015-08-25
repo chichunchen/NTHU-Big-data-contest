@@ -1,6 +1,4 @@
 <h2>隊伍名稱：<%= @group.title %></h2>
 <hr />
 
-<% @group.users.each do |user| %>
-  <%= user.name %><br />
-<% end %>
+<%= render 'users/table', object: @users %>

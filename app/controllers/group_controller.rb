@@ -3,5 +3,6 @@ class GroupController < ApplicationController
 
   def show
     @group = current_user.group
+    @users = @group.users.page(params[:page]).per_page(15)
   end
 end
