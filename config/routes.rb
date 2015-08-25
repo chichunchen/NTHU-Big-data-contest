@@ -14,31 +14,5 @@ Rails.application.routes.draw do
   resources :courses
   root 'welcome#index'
 
-  resources :groups do
-    member do
-      post :join
-      post :quit
-    end
-
-    resources :users
-  end
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  get 'group', to: 'groups#show'
 end
