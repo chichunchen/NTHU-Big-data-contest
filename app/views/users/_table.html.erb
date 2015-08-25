@@ -11,20 +11,22 @@
       </tr>
     </thead>
     <% @users.each do |user| %>
-      <tr>
-        <td>
-          <%= hide_full_name user %>
-        </td>
-        <td>
-          <%= user.school %>
-        </td>
-        <td>
-          <%= user.department %>
-        </td>
-        <td>
-          <%= link_to "詳細資訊", user_path(user) %>
-        </td>
-      </tr>
+      <% unless user.eql? current_user %>
+        <tr>
+          <td>
+            <%= hide_full_name user %>
+          </td>
+          <td>
+            <%= user.school %>
+          </td>
+          <td>
+            <%= user.department %>
+          </td>
+          <td>
+            <%= link_to "詳細資訊", user_path(user) %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 
