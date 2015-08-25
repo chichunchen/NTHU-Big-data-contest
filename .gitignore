@@ -14,3 +14,5 @@
 *.swp
 
 public/assets/*
+public/group/*
+public/user/*
