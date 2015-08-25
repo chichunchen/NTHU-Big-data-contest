@@ -16,4 +16,4 @@ production:
   <<: *default
   database: big-data-contest_production
   username: dalab
-  password: <%= ENV['BIG-DATA-CONTEST-DATABASE-PASSWORD'] %>
+  password: <%= ENV['BIG_DATA_CONTEST_DATABASE_PASSWORD'] %>
