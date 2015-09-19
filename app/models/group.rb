@@ -5,6 +5,8 @@ class Group < ActiveRecord::Base
 
   validates :title, presence: true
   has_many :users
+  has_many :teachers
+  has_many :mentors
   belongs_to :gstatus
 
   after_create :set_default
