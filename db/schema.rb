@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919084804) do
+ActiveRecord::Schema.define(version: 20150919090236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,10 @@ ActiveRecord::Schema.define(version: 20150919084804) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
   end
+
+  add_index "mentors", ["group_id"], name: "index_mentors_on_group_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -93,7 +96,10 @@ ActiveRecord::Schema.define(version: 20150919084804) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
   end
+
+  add_index "teachers", ["group_id"], name: "index_teachers_on_group_id", using: :btree
 
   create_table "user_courses", force: :cascade do |t|
     t.integer  "user_id"
@@ -162,6 +168,8 @@ ActiveRecord::Schema.define(version: 20150919084804) do
   end
 
   add_foreign_key "groups", "gstatuses"
+  add_foreign_key "mentors", "groups"
+  add_foreign_key "teachers", "groups"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
   add_foreign_key "user_skills", "skills"
