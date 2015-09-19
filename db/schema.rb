@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919090236) do
+ActiveRecord::Schema.define(version: 20150919125749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20150919090236) do
     t.string   "tryout_file"
     t.string   "preliminary_file"
     t.string   "final_file"
+    t.string   "tryout_path"
+    t.boolean  "tryout_search"
+    t.string   "preliminary_path"
+    t.boolean  "preliminary_search"
   end
 
   add_index "groups", ["gstatus_id"], name: "index_groups_on_gstatus_id", using: :btree

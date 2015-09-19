@@ -1,10 +1,15 @@
 <h3>修改隊伍資訊</h3>
 
 <hr>
+
 <%= simple_form_for @group do |f| %>
-  <%= f.input :software %>
-  <%= f.input :tryout_file %>
-  <%= f.input :preliminary_file %>
-  <%= f.input :final_file %>
+  <%= f.input :software, label: "使用軟體", collection: ["SPSS", "SAS", "MATLAB + Hbase"], required: true, prompt: "請選擇欲使用軟體" %>
+  <%= f.input :tryout_file, label: "初賽檔案上傳" %>
+  <%= f.input :tryout_path, label: "初賽檔案路徑" %>
+  <%= f.input :tryout_search, label: "初賽成績查詢" %>
+  <%= f.input :preliminary_file, label: "複賽檔案上傳" %>
+  <%= f.input :preliminary_path, label: "複賽檔案路徑" %>
+  <%= f.input :preliminary_search, label: "複賽成績查詢" %>
+  <%= f.input :final_file, label: "決賽檔案上傳" %>
   <%= f.submit "送出", disable_with: 'Submitting...', class: "btn btn-primary"%>
 <% end %>
