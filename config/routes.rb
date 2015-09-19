@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'group', to: 'group#show'
+  get 'group/edit', to: 'group#edit'
+  put 'group', to: 'group#update'
+  # resources :group, only: [:update]
 end

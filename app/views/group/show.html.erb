@@ -1,14 +1,22 @@
-<h2>隊伍名稱：<%= @group.title %> <small><%= @group.gstatus.name %></small></h2>
+<h2>
+  隊伍名稱：<%= @group.title %>
+  <small>
+    <%= @group.gstatus.name %>
+    <%= link_to "修改隊伍資訊", '/group/edit', class: 'btn btn-default pull-right' %>
+  </small>
+</h2>
 <p><%= @group.gstatus.note %></p>
 <hr />
 
 <div class="row">
   <div class="col-md-6">
     <h3>指導老師：</h3>
-    <% @group.teachers.each do |teacher| %>
-      姓名：<p><%= teacher.name %></p>
-      單位/名稱：<p><%= teacher.title %></p>
-      email：<p><%= teacher.email %></p>
+    <% if @group.teachers %>
+      <% @group.teachers.each do |teacher| %>
+        姓名：<p><%= teacher.name %></p>
+        單位/名稱：<p><%= teacher.title %></p>
+        email：<p><%= teacher.email %></p>
+      <% end %>
     <% end %>
     <% if @group.gstatus.name.eql? '通過初賽資格審核' %>
       <h3>初賽</h3>
@@ -28,10 +36,12 @@
   </div>
   <div class="col-md-6">
     <h3>業師：</h3>
-    <% @group.mentors.each do |mentor| %>
-      姓名：<p><%= mentor.name %></p>
-      單位/名稱：<p><%= mentor.title %></p>
-      email：<p><%= mentor.email %></p>
+    <% if @group.mentors %>
+      <% @group.mentors.each do |mentor| %>
+        姓名：<p><%= mentor.name %></p>
+        單位/名稱：<p><%= mentor.title %></p>
+        email：<p><%= mentor.email %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
