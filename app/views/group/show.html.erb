@@ -2,7 +2,7 @@
   隊伍名稱：<%= @group.title %>
   <small>
     <%= @group.gstatus.name %>
-    <%= link_to "修改隊伍資訊", '/group/edit', class: 'btn btn-default pull-right' %>
+    <%= link_to "修改隊伍資訊", edit_group_path(current_user.group), class: 'btn btn-default pull-right' %>
   </small>
 </h2>
 <p><%= @group.gstatus.note %></p>

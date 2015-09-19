@@ -3,7 +3,6 @@ class GroupController < ApplicationController
   before_action :set_group
 
   def show
-    #@group = current_user.group
     @users = @group.users.page(params[:page]).per_page(15)
   end
 
@@ -11,13 +10,10 @@ class GroupController < ApplicationController
   end
 
   def update
-    #@group = current_user.group
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated!'}
-      else
-        format.html { render :edit }
-      end
+    if @group.update(group_params)
+      redirect_to @group, notice: 'Group was successfully updated!'
+    else
+      render :edit
     end
   end
 
@@ -28,6 +24,7 @@ class GroupController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:software, :tryout_file, :preliminary_file, :final_file)
+    params.require(:group).permit(:software, :tryout_file, :tryout_path, :tryout_search,
+                                  :preliminary_file, :preliminary_path, :preliminary_search, :final_file)
   end
 end

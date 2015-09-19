@@ -14,8 +14,5 @@ Rails.application.routes.draw do
   resources :courses
   root 'welcome#index'
 
-  get 'group', to: 'group#show'
-  get 'group/edit', to: 'group#edit'
-  put 'group', to: 'group#update'
-  # resources :group, only: [:update]
+  resources :group, except: [:new, :create]
 end
