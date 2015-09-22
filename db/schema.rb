@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922053043) do
+ActiveRecord::Schema.define(version: 20150922054251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20150922053043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "group_mentor_ships", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "mentor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "group_mentor_ships", ["group_id"], name: "index_group_mentor_ships_on_group_id", using: :btree
+  add_index "group_mentor_ships", ["mentor_id"], name: "index_group_mentor_ships_on_mentor_id", using: :btree
 
   create_table "group_teacher_ships", force: :cascade do |t|
     t.integer  "group_id"
@@ -76,10 +86,7 @@ ActiveRecord::Schema.define(version: 20150922053043) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "group_id"
   end
-
-  add_index "mentors", ["group_id"], name: "index_mentors_on_group_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -178,10 +185,11 @@ ActiveRecord::Schema.define(version: 20150922053043) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "group_mentor_ships", "groups"
+  add_foreign_key "group_mentor_ships", "mentors"
   add_foreign_key "group_teacher_ships", "groups"
   add_foreign_key "group_teacher_ships", "teachers"
   add_foreign_key "groups", "gstatuses"
-  add_foreign_key "mentors", "groups"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
   add_foreign_key "user_skills", "skills"

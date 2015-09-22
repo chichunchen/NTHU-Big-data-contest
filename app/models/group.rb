@@ -7,7 +7,8 @@ class Group < ActiveRecord::Base
   has_many :users
   has_many :group_teacher_ships
   has_many :teachers, through: :group_teacher_ships
-  has_many :mentors
+  has_many :group_mentor_ships
+  has_many :mentors, through: :group_mentor_ships
   belongs_to :gstatus
 
   after_create :set_default
