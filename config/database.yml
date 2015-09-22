@@ -12,6 +12,10 @@ development:
   <<: *default
   database: big-data-contest_development
 
+test:
+  <<: *default
+  database: big-data-contest_development
+
 production:
   <<: *default
   database: big-data-contest_production

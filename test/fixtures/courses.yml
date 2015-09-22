@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  title: MyString
-  hosts: MyString
-  schooltime: MyString
+  code: 0898
+  title: Math
+  hosts: Apple
+  schooltime: 1300~1500
   total_hour: 1
 
 two:
-  code: MyString
-  title: MyString
-  hosts: MyString
-  schooltime: MyString
+  code: 3SDE
+  title: C
+  hosts: Google
+  schooltime: 1700~1900
   total_hour: 1
