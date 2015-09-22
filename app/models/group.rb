@@ -5,7 +5,8 @@ class Group < ActiveRecord::Base
 
   validates :title, presence: true
   has_many :users
-  has_many :teachers
+  has_many :group_teacher_ships
+  has_many :teachers, through: :group_teacher_ships
   has_many :mentors
   belongs_to :gstatus
 
