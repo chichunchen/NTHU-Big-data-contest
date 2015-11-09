@@ -81,7 +81,9 @@
   <p>
     即日起至 2015 年 9 月 16 日（星期三）截止
   <% unless current_user %>
-    <%= link_to("前往報名", new_user_registration_path, :class => "btn btn-info btn-lg") %>
+    <% if false %>
+      <%= link_to("前往報名", new_user_registration_path, :class => "btn btn-info btn-lg") %>
+    <% end %>
   <% end %>
   </p>
 </div>

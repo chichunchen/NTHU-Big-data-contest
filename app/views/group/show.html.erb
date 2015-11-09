@@ -20,18 +20,18 @@
     <% end %>
     <% if @group.gstatus.name.eql? '通過初賽資格審核' %>
       <h3>初賽</h3>
-      遠端IP/帳號/密碼：<%= @group.tryout_ip %>, <%= @group.tryout_account %>, <%= @group.tryout_password %>
-      保留資料路徑：<%= @group.tryout_path %>
+      <b>遠端IP/帳號/密碼：</b><%= @group.tryout_ip %>, <%= @group.tryout_account %>, <%= @group.tryout_password %>
+      <b>保留資料路徑：</b><%= @group.tryout_path %>
     <% end %>
     <% if @group.gstatus.name.eql? '通過複賽資格審核' %>
       <h3>複賽</h3>
-      遠端IP/帳號/密碼：<%= @group.preliminary_ip %>, <%= @group.preliminary_account %>, <%= @group.preliminary_password %>
-      保留資料路徑：<%= @group.preliminary_path %>
+      <b>遠端IP/帳號/密碼：</b><%= @group.preliminary_ip %>, <%= @group.preliminary_account %>, <%= @group.preliminary_password %>
+      <b>保留資料路徑：</b><%= @group.preliminary_path %>
     <% end %>
     <% if @group.gstatus.name.eql? '晉級決賽' %>
       <h3>決賽</h3>
-      遠端IP/帳號/密碼：<%= @group.final_ip %>, <%= @group.final_account %>, <%= @group.final_password %><br />
-      保留資料路徑：<%= @group.final_path %>
+      <b>遠端IP/帳號/密碼：</b><%= @group.final_ip %>, <%= @group.final_account %>, <%= @group.final_password %><br />
+      <b>保留資料路徑：</b><%= @group.final_path %>
     <% end %>
   </div>
   <div class="col-md-6">
